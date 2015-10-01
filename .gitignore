@@ -1,3 +1,6 @@
+# Windows stuff:
+*.db
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
