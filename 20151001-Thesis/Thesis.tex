@@ -9,8 +9,8 @@
 }
 
 % Need this on campus machine (but not at home)
-%\usepackage{sansmathaccent}
-%\pdfmapfile{+sansmathaccent.map}
+\usepackage{sansmathaccent}
+\pdfmapfile{+sansmathaccent.map}
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
@@ -70,7 +70,8 @@
 	}
 }
 
-\small
+%\small
+\tiny
 
 \section{Main Ideas}
 
@@ -78,7 +79,24 @@
 	\frametitle{Main Ideas}
 
 	\begin{itemize}
-		\item Ideas
+		\item use error analysis to choose $h$
+		\item error analysis depends on $a$
+		\begin{itemize}
+			\item Historically, $a$ has been a multiple of $h$, i.e., $a = 5h$
+		\end{itemize}
+		\item We should pick $a$ first as computation of long-range doesn't really depend strongly on it
+		\item Pick largest $a$ possible, such that any bin can have no more than $\sqrt{N}$ particles within it
+		\begin{itemize}
+			\item We want the largest $a$ because it will reduce the interpolation error estimate
+			\item This should allow us to choose a larger $h$ and lower $p$ (hopefully optimizing performance)
+			\item In serial, large $a$ should have less overhead when looping over bins
+			\item In parallel, large $a$ should reduce number of bins and IPC
+		\end{itemize}
+		\item How to pick $a$?
+		\item How to pick $h$?
+		\item How to pick $p$?
+		\item How to pick $k$?
+		\item How to pick $\mu$?
 	\end{itemize}
 }
 
